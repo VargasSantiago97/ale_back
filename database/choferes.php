@@ -8,6 +8,18 @@ class choferesDB extends DB
 		$query = $this->connect()->query($sql);
 		return $query;
 	}
+	function getID($idd)
+	{
+		$sql = 'SELECT * FROM choferes WHERE id=:idd';
+		$query = $this->connect()->prepare($sql);
+		$query->execute(
+			[
+				'idd' => $idd
+			]
+			);
+			
+		return $query;
+	}
 	function getAllAll()
 	{
 		$sql = 'SELECT * FROM choferes';

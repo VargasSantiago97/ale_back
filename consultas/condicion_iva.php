@@ -9,6 +9,13 @@ class Class_condicion_iva
 		if($res->rowCount()) echo json_encode($res->fetchAll(PDO::FETCH_ASSOC));
 		else echo json_encode([]);
 	}
+	 function getID($idd)
+	{
+		$consulta = new condicion_ivaDB();
+		$res = $consulta->getID($idd);
+		if($res->rowCount()) echo json_encode($res->fetchAll(PDO::FETCH_ASSOC));
+		else echo json_encode([]);
+	}
 	function getAllAll()
 	{
 		$consulta = new condicion_ivaDB();

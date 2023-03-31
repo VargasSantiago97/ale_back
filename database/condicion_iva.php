@@ -8,6 +8,18 @@ class condicion_ivaDB extends DB
 		$query = $this->connect()->query($sql);
 		return $query;
 	}
+	function getID($idd)
+	{
+		$sql = 'SELECT * FROM condicion_iva WHERE id=:idd';
+		$query = $this->connect()->prepare($sql);
+		$query->execute(
+			[
+				'idd' => $idd
+			]
+			);
+			
+		return $query;
+	}
 	function getAllAll()
 	{
 		$sql = 'SELECT * FROM condicion_iva';

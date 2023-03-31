@@ -9,6 +9,13 @@ class Class_choferes
 		if($res->rowCount()) echo json_encode($res->fetchAll(PDO::FETCH_ASSOC));
 		else echo json_encode([]);
 	}
+	 function getID($idd)
+	{
+		$consulta = new choferesDB();
+		$res = $consulta->getID($idd);
+		if($res->rowCount()) echo json_encode($res->fetchAll(PDO::FETCH_ASSOC));
+		else echo json_encode([]);
+	}
 	function getAllAll()
 	{
 		$consulta = new choferesDB();

@@ -22,6 +22,7 @@ if($tabla == 'camiones'){
 	include_once 'consultas/camiones.php';
 	$api = new Class_camiones;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -33,6 +34,7 @@ if($tabla == 'choferes'){
 	include_once 'consultas/choferes.php';
 	$api = new Class_choferes;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -44,6 +46,7 @@ if($tabla == 'condicion_iva'){
 	include_once 'consultas/condicion_iva.php';
 	$api = new Class_condicion_iva;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -55,6 +58,7 @@ if($tabla == 'socios'){
 	include_once 'consultas/socios.php';
 	$api = new Class_socios;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -66,6 +70,7 @@ if($tabla == 'transportistas'){
 	include_once 'consultas/transportistas.php';
 	$api = new Class_transportistas;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -77,6 +82,7 @@ if($tabla == 'users'){
 	include_once 'consultas/users.php';
 	$api = new Class_users;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -88,6 +94,7 @@ if($tabla == 'campanas'){
 	include_once 'consultas/campanas.php';
 	$api = new Class_campanas;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -99,6 +106,7 @@ if($tabla == 'depositos'){
 	include_once 'consultas/depositos.php';
 	$api = new Class_depositos;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -110,6 +118,7 @@ if($tabla == 'establecimientos'){
 	include_once 'consultas/establecimientos.php';
 	$api = new Class_establecimientos;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -121,6 +130,7 @@ if($tabla == 'gastos'){
 	include_once 'consultas/gastos.php';
 	$api = new Class_gastos;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -132,6 +142,7 @@ if($tabla == 'granos'){
 	include_once 'consultas/granos.php';
 	$api = new Class_granos;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -143,6 +154,7 @@ if($tabla == 'orden_carga'){
 	include_once 'consultas/orden_carga.php';
 	$api = new Class_orden_carga;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -154,6 +166,7 @@ if($tabla == 'movimientos'){
 	include_once 'consultas/movimientos.php';
 	$api = new Class_movimientos;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
@@ -165,6 +178,7 @@ if($tabla == 'sync'){
 	include_once 'consultas/sync.php';
 	$api = new Class_sync;
 	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
 	if($op=='getAllAll') $api->getAllAll();
 	if($op=='getAllForSync') $api->getAllForSync();
 	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));

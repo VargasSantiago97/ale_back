@@ -8,6 +8,18 @@ class establecimientosDB extends DB
 		$query = $this->connect()->query($sql);
 		return $query;
 	}
+	function getID($idd)
+	{
+		$sql = 'SELECT * FROM establecimientos WHERE id=:idd';
+		$query = $this->connect()->prepare($sql);
+		$query->execute(
+			[
+				'idd' => $idd
+			]
+			);
+			
+		return $query;
+	}
 	function getAllAll()
 	{
 		$sql = 'SELECT * FROM establecimientos';

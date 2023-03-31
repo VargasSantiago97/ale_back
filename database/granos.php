@@ -8,6 +8,18 @@ class granosDB extends DB
 		$query = $this->connect()->query($sql);
 		return $query;
 	}
+	function getID($idd)
+	{
+		$sql = 'SELECT * FROM granos WHERE id=:idd';
+		$query = $this->connect()->prepare($sql);
+		$query->execute(
+			[
+				'idd' => $idd
+			]
+			);
+			
+		return $query;
+	}
 	function getAllAll()
 	{
 		$sql = 'SELECT * FROM granos';

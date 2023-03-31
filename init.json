@@ -1,0 +1,58 @@
+[
+    {
+        "tabla": "camiones",
+        "columnas": ["id", "id_transportista", "patente_chasis", "patente_acoplado", "patente_otro", "codigo", "alias", "modelo", "kg_tara", "creado_por", "creado_el", "editado_por", "editado_el", "estado"]
+    },
+    {
+        "tabla": "choferes",
+        "columnas": ["id", "id_transportista", "codigo", "alias", "razon_social", "cuit", "condicion_iva", "creado_por", "creado_el", "editado_por", "editado_el", "estado"]
+    },
+    {
+        "tabla": "condicion_iva",
+        "columnas": ["id", "alias", "descripcion", "codigo", "iva", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "socios",
+        "columnas": ["id", "alias", "razon_social", "cuit", "codigo", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "transportistas",
+        "columnas": ["id", "codigo", "alias", "razon_social", "cuit", "condicion_iva", "creado_por", "creado_el", "editado_por", "editado_el", "estado", "tipoPersona", "nombre", "apellido", "direccion", "localidad", "codigoPostal", "descripcionProvincia"]
+    },
+    {
+        "tabla": "users",
+        "columnas": ["id", "alias", "nombre", "apellido", "foto_url", "estado"]
+    },
+    {
+        "tabla": "campanas",
+        "columnas": ["id", "alias", "descripcion", "codigo", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "depositos",
+        "columnas": ["id", "alias", "descripcion", "codigo", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "establecimientos",
+        "columnas": ["id", "alias", "descripcion", "codigo", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "gastos",
+        "columnas": ["id", "alias", "descripcion", "codigo", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "granos",
+        "columnas": ["id", "alias", "descripcion", "codigo", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "orden_carga",
+        "columnas": ["id", "numero", "fecha", "beneficiario", "transportista", "conductor", "patentes", "establecimiento", "cultivo", "trilla_silo", "tara", "bruto", "neto", "firma1", "firma2", "observaciones", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "movimientos",
+        "columnas": ["id", "fecha", "id_campana", "id_socio", "id_origen", "id_grano", "id_transporte", "id_chofer", "id_camion", "id_corredor", "id_acopio", "id_deposito", "kg_bruto", "kg_tara", "kg_neto", "kg_regulacion", "kg_neto_final", "observaciones", "tipo_origen", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "sync",
+        "columnas": ["id", "server", "tabla", "ult_mod"]
+    }
+]

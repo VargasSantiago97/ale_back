@@ -185,4 +185,40 @@ if($tabla == 'sync'){
 	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
 }
 
+//corredores
+if($tabla == 'corredores'){
+	include_once 'consultas/corredores.php';
+	$api = new Class_corredores;
+	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
+	if($op=='getAllAll') $api->getAllAll();
+	if($op=='getAllForSync') $api->getAllForSync();
+	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
+	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
+}
+
+//acopios
+if($tabla == 'acopios'){
+	include_once 'consultas/acopios.php';
+	$api = new Class_acopios;
+	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
+	if($op=='getAllAll') $api->getAllAll();
+	if($op=='getAllForSync') $api->getAllForSync();
+	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
+	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
+}
+
+//banderas
+if($tabla == 'banderas'){
+	include_once 'consultas/banderas.php';
+	$api = new Class_banderas;
+	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
+	if($op=='getAllAll') $api->getAllAll();
+	if($op=='getAllForSync') $api->getAllForSync();
+	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
+	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
+}
+
 ?>

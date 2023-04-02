@@ -54,5 +54,17 @@
     {
         "tabla": "sync",
         "columnas": ["id", "server", "tabla", "ult_mod"]
+    },
+    {
+        "tabla": "corredores",
+        "columnas": ["id", "alias", "razon_social", "cuit", "codigo", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "acopios",
+        "columnas": ["id", "alias", "razon_social", "cuit", "codigo", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
+    },
+    {
+        "tabla": "banderas",
+        "columnas": ["id", "alias", "codigo", "icono", "fondo", "color", "creado_por", "creado_el", "editado_por", "editado_el", "activo", "estado"]
     }
 ]

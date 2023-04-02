@@ -21,14 +21,14 @@ class Class_condicion_iva
 		$consulta = new condicion_ivaDB();
 		$res = $consulta->getAllAll();
 		if($res->rowCount()) echo json_encode($res->fetchAll(PDO::FETCH_ASSOC));
-		else echo json_encode(array('mensaje' => 'error conectando a db'));
+		else echo json_encode([]);
 	}
 	function getAllForSync()
 	{
 		$consulta = new condicion_ivaDB();
 		$res = $consulta->getAllForSync();
 		if($res->rowCount()) echo json_encode($res->fetchAll(PDO::FETCH_ASSOC));
-		else echo json_encode(array('mensaje' => 'error conectando a db'));
+		else echo json_encode([]);
 	}
 	function update($data)
 	{

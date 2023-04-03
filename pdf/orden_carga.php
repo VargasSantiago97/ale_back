@@ -185,6 +185,8 @@ if (isset($_GET['orden_carga'])) {
 
     $pdf->Body(); //Llamada a la función Body para generar el PDF
 
+    $pdf->setTitle("Orden de Carga - N" . utf8_decode($_GET['numero']) . " - " . utf8_decode($_GET['establecimiento']));
+
     $nombreArchivo = "Orden de Carga - N" . utf8_decode($_GET['numero']) . " - " . utf8_decode($_GET['establecimiento']) . ".pdf"; //date("d_m_Y_H_i_s")
 
     $pdf->Output($nombreArchivo, isset($_GET['D']) ? $_GET['D'] : 'I'); //I mostrar; D descargar

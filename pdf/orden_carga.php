@@ -33,23 +33,23 @@ class PDF extends FPDF
     public $firma2 = '';
     public $observaciones = '';
 
-    function setear()
+    function setear($ent)
     {
-        $this->numero = isset($_GET["numero"]) ? utf8_decode($_GET["numero"]) : "-";
-        $this->fecha = isset($_GET["fecha"]) ? utf8_decode($_GET["fecha"]) : "  /   /  ";
-        $this->beneficiario = isset($_GET["beneficiario"]) ? utf8_decode($_GET["beneficiario"]) : "";
-        $this->transportista = isset($_GET["transportista"]) ? utf8_decode($_GET["transportista"]) : "";
-        $this->conductor = isset($_GET["conductor"]) ? utf8_decode($_GET["conductor"]) : "";
-        $this->patentes = isset($_GET["patentes"]) ? utf8_decode($_GET["patentes"]) : "";
-        $this->establecimiento = isset($_GET["establecimiento"]) ? utf8_decode($_GET["establecimiento"]) : "";
-        $this->cultivo = isset($_GET["cultivo"]) ? utf8_decode($_GET["cultivo"]) : "";
-        $this->trilla_silo = isset($_GET["trilla_silo"]) ? utf8_decode($_GET["trilla_silo"]) : "";
-        $this->tara = isset($_GET["tara"]) ? utf8_decode($_GET["tara"]) : "";
-        $this->bruto = isset($_GET["bruto"]) ? utf8_decode($_GET["bruto"]) : "";
-        $this->neto = isset($_GET["neto"]) ? utf8_decode($_GET["neto"]) : "";
-        $this->firma1 = isset($_GET["firma1"]) ? utf8_decode($_GET["firma1"]) : "";
-        $this->firma2 = isset($_GET["firma2"]) ? utf8_decode($_GET["firma2"]) : "";
-        $this->observaciones = isset($_GET["observaciones"]) ? utf8_decode($_GET["observaciones"]) : "";
+        $this->numero = isset($ent["numero"]) ? utf8_decode($ent["numero"]) : "-";
+        $this->fecha = isset($ent["fecha"]) ? utf8_decode($ent["fecha"]) : "  /   /  ";
+        $this->beneficiario = isset($ent["beneficiario"]) ? utf8_decode($ent["beneficiario"]) : "";
+        $this->transportista = isset($ent["transportista"]) ? utf8_decode($ent["transportista"]) : "";
+        $this->conductor = isset($ent["conductor"]) ? utf8_decode($ent["conductor"]) : "";
+        $this->patentes = isset($ent["patentes"]) ? utf8_decode($ent["patentes"]) : "";
+        $this->establecimiento = isset($ent["establecimiento"]) ? utf8_decode($ent["establecimiento"]) : "";
+        $this->cultivo = isset($ent["cultivo"]) ? utf8_decode($ent["cultivo"]) : "";
+        $this->trilla_silo = isset($ent["trilla_silo"]) ? utf8_decode($ent["trilla_silo"]) : "";
+        $this->tara = isset($ent["tara"]) ? utf8_decode($ent["tara"]) : "";
+        $this->bruto = isset($ent["bruto"]) ? utf8_decode($ent["bruto"]) : "";
+        $this->neto = isset($ent["neto"]) ? utf8_decode($ent["neto"]) : "";
+        $this->firma1 = isset($ent["firma1"]) ? utf8_decode($ent["firma1"]) : "";
+        $this->firma2 = isset($ent["firma2"]) ? utf8_decode($ent["firma2"]) : "";
+        $this->observaciones = isset($ent["observaciones"]) ? utf8_decode($ent["observaciones"]) : "";
     }
 
 
@@ -177,18 +177,18 @@ class PDF extends FPDF
 
 
 
-if (isset($_GET['orden_carga'])) {
+if (isset($_GET['o'])) {
 
     $pdf = new PDF();
 
-    $pdf->setear();
+    $datos = json_decode(base64_decode($_GET['o']), true);
+
+    $pdf->setear($datos);
 
     $pdf->Body(); //Llamada a la función Body para generar el PDF
 
-    $pdf->setTitle("Orden de Carga - N" . utf8_decode($_GET['numero']) . " - " . utf8_decode($_GET['establecimiento']));
+    $nombre = "Orden de Carga - N" . utf8_decode($datos['numero']) . " - " . utf8_decode($datos['establecimiento']);
+    $pdf->setTitle($nombre);
 
-    $nombreArchivo = "Orden de Carga - N" . utf8_decode($_GET['numero']) . " - " . utf8_decode($_GET['establecimiento']) . ".pdf"; //date("d_m_Y_H_i_s")
-
-    $pdf->Output($nombreArchivo, isset($_GET['D']) ? $_GET['D'] : 'I'); //I mostrar; D descargar
-
+    $pdf->Output($nombre.".pdf", isset($_GET['D']) ? $_GET['D'] : 'I'); //I mostrar; D descargar
 }

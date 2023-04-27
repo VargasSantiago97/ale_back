@@ -221,4 +221,64 @@ if($tabla == 'banderas'){
 	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
 }
 
+//intervinientes
+if($tabla == 'intervinientes'){
+	include_once 'consultas/intervinientes.php';
+	$api = new Class_intervinientes;
+	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
+	if($op=='getAllAll') $api->getAllAll();
+	if($op=='getAllForSync') $api->getAllForSync();
+	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
+	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
+}
+
+//asientos
+if($tabla == 'asientos'){
+	include_once 'consultas/asientos.php';
+	$api = new Class_asientos;
+	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
+	if($op=='getAllAll') $api->getAllAll();
+	if($op=='getAllForSync') $api->getAllForSync();
+	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
+	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
+}
+
+//medios_pago
+if($tabla == 'medios_pago'){
+	include_once 'consultas/medios_pago.php';
+	$api = new Class_medios_pago;
+	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
+	if($op=='getAllAll') $api->getAllAll();
+	if($op=='getAllForSync') $api->getAllForSync();
+	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
+	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
+}
+
+//orden_pago
+if($tabla == 'orden_pago'){
+	include_once 'consultas/orden_pago.php';
+	$api = new Class_orden_pago;
+	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
+	if($op=='getAllAll') $api->getAllAll();
+	if($op=='getAllForSync') $api->getAllForSync();
+	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
+	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
+}
+
+//carta_porte
+if($tabla == 'carta_porte'){
+	include_once 'consultas/carta_porte.php';
+	$api = new Class_carta_porte;
+	if($op=='getAll') $api->getAll();
+	if($op=='getID') $api->getID($_GET['id']);
+	if($op=='getAllAll') $api->getAllAll();
+	if($op=='getAllForSync') $api->getAllForSync();
+	if($op=='update') $api->update(json_decode(file_get_contents('php://input'), true));
+	if($op=='create') $api->create(json_decode(file_get_contents('php://input'), true));
+}
+
 ?>

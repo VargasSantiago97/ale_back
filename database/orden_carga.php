@@ -35,10 +35,11 @@ class orden_cargaDB extends DB
 	function update($datos)
 	{
 		if($datos['id'] != null){
-			$query = $this->connect()->prepare('UPDATE orden_carga SET id = :id, numero = :numero, fecha = :fecha, beneficiario = :beneficiario, transportista = :transportista, conductor = :conductor, patentes = :patentes, establecimiento = :establecimiento, cultivo = :cultivo, trilla_silo = :trilla_silo, tara = :tara, bruto = :bruto, neto = :neto, firma1 = :firma1, firma2 = :firma2, observaciones = :observaciones, creado_por = :creado_por, creado_el = :creado_el, editado_por = :editado_por, editado_el = :editado_el, activo = :activo, estado = :estado WHERE id = :id');
+			$query = $this->connect()->prepare('UPDATE orden_carga SET id = :id, id_movimiento = :id_movimiento, numero = :numero, fecha = :fecha, beneficiario = :beneficiario, transportista = :transportista, conductor = :conductor, patentes = :patentes, establecimiento = :establecimiento, cultivo = :cultivo, trilla_silo = :trilla_silo, tara = :tara, bruto = :bruto, neto = :neto, firma1 = :firma1, firma2 = :firma2, observaciones = :observaciones, creado_por = :creado_por, creado_el = :creado_el, editado_por = :editado_por, editado_el = :editado_el, activo = :activo, estado = :estado WHERE id = :id');
 			$query->execute(
 				[
 					'id' => isset($datos['id']) ? $datos['id'] : null,
+					'id_movimiento' => isset($datos['id_movimiento']) ? $datos['id_movimiento'] : null,
 					'numero' => isset($datos['numero']) ? $datos['numero'] : null,
 					'fecha' => isset($datos['fecha']) ? $datos['fecha'] : null,
 					'beneficiario' => isset($datos['beneficiario']) ? $datos['beneficiario'] : null,
@@ -68,10 +69,11 @@ class orden_cargaDB extends DB
 	function create($datos)
 	{
 		if($datos['id'] != null){
-			$query = $this->connect()->prepare('INSERT INTO orden_carga (id, numero, fecha, beneficiario, transportista, conductor, patentes, establecimiento, cultivo, trilla_silo, tara, bruto, neto, firma1, firma2, observaciones, creado_por, creado_el, editado_por, editado_el, activo, estado) VALUES (:id, :numero, :fecha, :beneficiario, :transportista, :conductor, :patentes, :establecimiento, :cultivo, :trilla_silo, :tara, :bruto, :neto, :firma1, :firma2, :observaciones, :creado_por, :creado_el, :editado_por, :editado_el, :activo, :estado)');
+			$query = $this->connect()->prepare('INSERT INTO orden_carga (id, id_movimiento, numero, fecha, beneficiario, transportista, conductor, patentes, establecimiento, cultivo, trilla_silo, tara, bruto, neto, firma1, firma2, observaciones, creado_por, creado_el, editado_por, editado_el, activo, estado) VALUES (:id, :id_movimiento, :numero, :fecha, :beneficiario, :transportista, :conductor, :patentes, :establecimiento, :cultivo, :trilla_silo, :tara, :bruto, :neto, :firma1, :firma2, :observaciones, :creado_por, :creado_el, :editado_por, :editado_el, :activo, :estado)');
 			$query->execute(
 				[
 					'id' => isset($datos['id']) ? $datos['id'] : null,
+					'id_movimiento' => isset($datos['id_movimiento']) ? $datos['id_movimiento'] : null,
 					'numero' => isset($datos['numero']) ? $datos['numero'] : null,
 					'fecha' => isset($datos['fecha']) ? $datos['fecha'] : null,
 					'beneficiario' => isset($datos['beneficiario']) ? $datos['beneficiario'] : null,
